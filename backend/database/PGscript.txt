@@ -1,0 +1,62 @@
+-- CREACIÓN DE TABLAS
+
+CREATE TABLE provinces (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    full_name VARCHAR(150),
+    latitude DECIMAL,
+    longitude DECIMAL,
+    display_order INTEGER
+);
+
+CREATE TABLE locations (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    id_province INTEGER REFERENCES provinces(id),
+    latitude DECIMAL,
+    longitude DECIMAL
+);
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE event_locations (
+    id SERIAL PRIMARY KEY,
+    id_location INTEGER REFERENCES locations(id),
+    name VARCHAR(150),
+    full_address TEXT,
+    max_capacity INTEGER,
+    latitude DECIMAL,
+    longitude DECIMAL,
+    id_creator_user INTEGER REFERENCES users(id)
+);
+
+CREATE TABLE events (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(150),
+    description TEXT,
+    id_event_category INTEGER,
+    id_event_location INTEGER REFERENCES event_locations(id),
+    start_date TIMESTAMP,
+    duration_in_minutes INTEGER,
+    price DECIMAL(10,2),
+    enabled_for_enrollment BOOLEAN,
+    max_assistance INTEGER,
+    id_creator_user INTEGER REFERENCES users(id)
+);
+
+CREATE TABLE event_enrollments (
+    id SERIAL PRIMARY KEY,
+    id_event INTEGER REFERENCES events(id),
+    id_user INTEGER REFERENCES users(id),
+    description TEXT,
+    registration_date_time TIMESTAMP,
+    attended BOOLEAN,
+    observations TEXT,
+    rating INTEGER
+);

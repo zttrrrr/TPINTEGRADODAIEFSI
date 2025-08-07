@@ -1,0 +1,72 @@
+.event-detail-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .event-detail-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .event-detail-container p {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #444;
+  }
+  
+  .event-detail-container strong {
+    color: #222;
+  }
+  
+  .text-green {
+    color: #2e7d32;
+    font-weight: bold;
+  }
+  
+  .text-red {
+    color: #c62828;
+    font-weight: bold;
+  }
+  
+  .btn-inscribite {
+    background-color: #2e7d32;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-inscribite:hover {
+    background-color: #1b5e20;
+  }
+  
+  .btn-inscribite-disabled {
+    background-color: #ccc;
+    color: #666;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+  
+h6 {
+    color: red;
+  font-size: large;
+    font-weight: 100px;
+  }
+  
